@@ -8,3 +8,5 @@ File Connect.py là thao tác cơ bản để kết nối, gửi request và nh�
 
 Urllib2.py have pretty much similar in meaning compare to Connect.py
 However this is done with python urllib2, and get a better reply from server than python socket.
+
+DDos.py is used for studying only. I have nerver tried to attack anyone with it. And I dont want anyone to use it to attack others.
