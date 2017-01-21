@@ -1,4 +1,4 @@
-# NetworkProgramming
+# SocketProgramming
 
 This is the code which was used for studying Network Programming.
 Đây là code học NetworkProgramming với thư viện Socket của python
