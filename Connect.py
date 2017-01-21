@@ -1,9 +1,12 @@
 import socket
+import ssl
 
 def connect(name, header):
     ip = socket.gethostbyname(name)
     
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    if port==443:
+        s = ssl.wrap_socket(s, ssl_version=ssl.PROTOCOL_TLSv1)
     try:
         s.connect((ip,80))
     except socket.error, v:
