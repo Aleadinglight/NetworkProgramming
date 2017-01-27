@@ -6,7 +6,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 #gan socket bang cong 8081
-server_address = ("localhost", 8081)
+server_address = ("AnHo", 8081)
 print "Starting up on %s port %s" % server_address
 server.bind(server_address)
 
