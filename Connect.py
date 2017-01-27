@@ -1,14 +1,14 @@
 import socket
 import ssl
 
-def connect(name, header):
+def connect(name, header, port):
     ip = socket.gethostbyname(name)
-    
+    print "Connecting to ip address: ",ip,"\n..."
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     if port==443:
         s = ssl.wrap_socket(s, ssl_version=ssl.PROTOCOL_TLSv1)
     try:
-        s.connect((ip,80))
+        s.connect((ip,port))
     except socket.error, v:
         print "Cant connect!"
         return
@@ -19,7 +19,6 @@ def connect(name, header):
         return
     data = s.recv(1000000)
     print "Receive: \n",data
-    print ip
     s.close()
 
 name = "iot13bk.1apps.com"
@@ -34,4 +33,5 @@ Keep-Alive: 300\r
 Connection: keep-alive\r
 \r
 """
-connect(name, header)
+port = 80
+connect(name, header,port)
